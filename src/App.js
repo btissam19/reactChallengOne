@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './index.css';
+import { useState } from 'react';
+import Content from './Content';
+import DispalyColor from './DispalyColor';
 
 function App() {
+const [hexValue, setHexValue] = useState('')
+const [isDarkText, setIsDarkText] = useState(true)
+const [newColor,setColor]=useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Content newColor={newColor} isDarkText={isDarkText} hexValue={hexValue} setHexValue={setHexValue}/>
+      <DispalyColor  newColor={newColor} setColor={setColor} isDarkText={isDarkText} setIsDarkText={setIsDarkText} setHexValue={setHexValue}/>
     </div>
   );
 }
